@@ -1,6 +1,11 @@
 #!/bin/sh
 
-SCRIPTDIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)"
+# Helps migrate from v2.4.0 to v3.0.0
+#
+# Refactor a page named `X.md` to `content/<section>/X/index.md` to use the
+# new page bundles and featured image system
+#
+# - E.g. a post `content/post/X.md` is converted to `content/post/X/index.md`
 
 refactor_pages_to_page_bundles()
 {
