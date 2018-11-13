@@ -17,7 +17,7 @@ refactor_pages_to_page_bundles()
     local pagedir="${file%.md}"
 
     echo "${file} -> ${pagedir}/index.md"
-    if [ -d "${pagedir}" ]; then
+    if [ ! -d "${pagedir}" ]; then
       mkdir "${pagedir}"
     fi
 
