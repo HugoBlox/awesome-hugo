@@ -21,7 +21,7 @@ refactor_pages_to_page_bundles()
       mkdir "${pagedir}"
     fi
 
-    mv --no-target-directory "${file}" "${pagedir}/index.md"
+    mv "${file}" "${pagedir}/index.md"
   done
 }
 
