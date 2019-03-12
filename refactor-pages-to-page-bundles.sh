@@ -10,7 +10,8 @@
 refactor_pages_to_page_bundles()
 {
   if [ ! -d ./content/ ]; then
-    echo "Please run script from root of hugo site"
+    echo "Please run the script from the root of your Academic site" >&2
+    exit 1
   fi
   local files="$(find ./content/ -iname '*.md' -not -iname '*index.md' -not -ipath './content/home/*')"
   for file in ${files}; do
