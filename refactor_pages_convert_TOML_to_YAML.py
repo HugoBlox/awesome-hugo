@@ -5,11 +5,11 @@ import glob
 import toml
 import yaml
 
-VERB = False
-# VERB = True
+VERBOSE = False
+# VERBOSE = True
 
 for file_path in glob.glob("content/**/*.md", recursive=True):
-    if VERB: print('Handling file :', file_path)
+    if VERBOSE: print('Handling file :', file_path)
     # loads file
     with open(file_path, 'r', encoding='utf-8') as source_file:
         page = source_file.read() + '\n'
@@ -19,21 +19,21 @@ for file_path in glob.glob("content/**/*.md", recursive=True):
 
     if len(parts) == 3 :
         pre, metadata, post = parts
-        if VERB: print('Handling file :', file_path, 'pre =', pre)
-        if VERB: print('Handling file :', file_path, 'post =', post)
+        if VERBOSE: print('Handling file :', file_path, 'pre =', pre)
+        if VERBOSE: print('Handling file :', file_path, 'post =', post)
 
         parsed_metadata = toml.loads(metadata)
-        if VERB: print('Handling file :', file_path, '\nparsed_toml =', parsed_metadata)
+        if VERBOSE: print('Handling file :', file_path, '\nparsed_toml =', parsed_metadata)
 
         # saves
         metadata = yaml.dump(parsed_metadata, encoding=('utf-8'), allow_unicode=True)
-        if VERB: print('Handling file :', file_path, '\nYAML =', metadata)
+        if VERBOSE: print('Handling file :', file_path, '\nYAML =', metadata)
         metadata = metadata.decode('utf-8')
-        if VERB: print('Handling file :', file_path, '\nYAML =', metadata)
+        if VERBOSE: print('Handling file :', file_path, '\nYAML =', metadata)
 
         # Save Markdown file.
         try:
-            if VERB: print(f"Saving Markdown to '{file_path}'")
+            if VERBOSE: print(f"Saving Markdown to '{file_path}'")
             page = '---\n' + metadata + '---\n' + post.strip('\n')
             with open(file_path, 'w', encoding='utf-8') as f:
                 f.write(page + '\n')

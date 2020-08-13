@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-# Helps migrate from v2.4.0 to v3.0.0
+# Helps migrate from Academic v2.4.0 to v3.0.0
 #
 # Refactor a page named `X.md` to `content/<section>/X/index.md` to use the
 # new page bundles and featured image system
@@ -9,11 +9,13 @@
 
 refactor_pages_to_page_bundles()
 {
+  # Check that the command was run from the site root.
   if [ ! -d ./content/ ]; then
-    echo "Please run the script from the root of your Academic site" >&2
+    echo "Please run the script from the root folder of your site" >&2
     exit 1
   fi
-  local files="$(find ./content/ -iname '*.md' -not -iname '*index.md' -not -ipath './content/home/*')"
+  # Iterate over pages except index.md and _index.md.
+  local files="$(find ./content/ -iname '*.md' -not -iname '*index.md')"
   for file in ${files}; do
     local pagedir="${file%.md}"
 
@@ -29,5 +31,6 @@ refactor_pages_to_page_bundles()
 # Bash Strict Mode
 set -eu
 
+# To debug, uncomment line below:
 # set -x
 refactor_pages_to_page_bundles "$@"
