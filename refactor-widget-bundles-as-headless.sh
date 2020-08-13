@@ -19,7 +19,7 @@ refactor_homepage_widget_bundles_as_headless()
   local files="$(find ./content/home/ -iname 'index.md')"
   for file in ${files}; do
     # Append new parameter after `widget` line using Mac and Unix friendly sed notation.
-    sed -e '/widget =/a\'$'\n''headless = true  # This file represents a page section.' "${file}" > tmp && mv tmp "${file}"
+    sed -e '/widget:/a\'$'\n''headless: true  # This file represents a page section.' "${file}" > tmp && mv tmp "${file}"
   done
 }
 
