@@ -21,6 +21,8 @@
   - To use `cd YOUR_SITE_FOLDER` and `python3 refactor_pages_convert_TOML_to_YAML.py`
 - `refactor-widget-bundles-as-headless.sh`
   - Refactor Hugo widgets to add `headless: true` to front matter (assumes YAML front matter, such as by running above Python script to convert all front matter from TOML to YAML)
+- [wp2hugo](https://github.com/ashishb/wp2hugo)
+  - The best WordPress to Hugo migrator
 
 ## Notes
 
