@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "awesome-hugo"
+version = "0.1.0"
+description = "Utilities to help migrate and manage Hugo / Hugo Blox sites"
+authors = ["Hugo Blox Team"]
+license = "MIT"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.8,<4.0"
+pyyaml = "^6.0"
+toml = "^0.10.2"
+
+[tool.poetry.group.dev.dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.8.0"]
+build-backend = "poetry.core.masonry.api"
