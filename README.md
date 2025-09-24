@@ -1,6 +1,9 @@
-# Awesome Hugo
-
-**Tools to help you upgrade and manage your [Hugo](https://gohugo.io/) / [Hugo Blox](https://hugoblox.com/?utm_source=github&utm_medium=awesome-hugo) sites.**
+<!-- markdownlint-disable MD033 -->
+<p align="center">
+  <h1>Awesome Hugo</h1>
+  <p><strong>Tools to help you upgrade and manage your <a href="https://gohugo.io/">Hugo</a> / <a href="https://hugoblox.com/?utm_source=github&utm_medium=awesome-hugo">Hugo Blox</a> sites.</strong></p>
+</p>
+<!-- markdownlint-enable MD033 -->
 
 <!-- markdownlint-disable MD033 -->
 <p align="center">
